@@ -1,6 +1,5 @@
 # PTAS
 atividade avaliativa 1
-Na próxima vez lembra de tirar a sua conta Gustavo loirinho, agradeça que não apaguei nada!
 
 O termo middleware refere-se a um tipo de software que atua como uma ponte entre diferentes aplicativos ou sistemas, facilitando a comunicação e a gestão de dados entre eles. Seu papel é crucial em arquiteturas de sistemas distribuídos, pois permite a interação de diferentes componentes de software, inclusive aqueles desenvolvidos com linguagens ou em plataformas distintas.
 
