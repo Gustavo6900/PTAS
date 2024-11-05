@@ -1,13 +1,15 @@
 const express = require("express")
 const app = express()
+const controller = require('./controller/itemsController')
+
+const loggerMiddleware = require("./middlewares/loggerMiddleware");
 
 app.get('/', (req,res) =>{
     res.send('Bem-vindo')
 })
 
-app.get('/items', (req,res) => {
-    res.send('Pagina de itens')
-})
+app.get('/items', loggerMiddleware, controller.get
+)
 
 
 app.listen(3001,() =>{
