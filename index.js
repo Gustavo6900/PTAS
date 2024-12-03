@@ -1,17 +1,33 @@
-const express = require("express")
+import express from 'express'
 const app = express()
-const controller = require('./controller/itemsController')
 
-const loggerMiddleware = require("./middlewares/loggerMiddleware");
+app.get('/calculadora/:ope/:numb1/:numb2', (req,res) => {
 
-app.get('/', (req,res) =>{
-    res.send('Bem-vindo')
+    const numb1 = parseFloat(req.params.numb1)
+    const numb2 = parseFloat(req.params.numb2)
+
+    const verifica = (x,y) => {
+        if(req.params.ope == "divisao"){
+            x / y
+        }
+        if(req.params.ope == "adicao"){
+            x + y
+        }
+        if(req.params.ope == "multiplicacaoo"){
+            x * y
+        }
+        if(req.params.ope == "subtracao"){
+            x - y
+        }
+    }
+
+
+   const resultado =  verifica(numb1, numb2)
+    res.send(`<h2>Resultado : ${resultado}<h2>`)
+
 })
 
-app.get('/items', loggerMiddleware, controller.get
-)
 
-
-app.listen(3001,() =>{
-console.log("servidor rodando na url http://localhost:3001")
+app.listen(3334, ()=> {
+    console.log("servidor rodando na porta 3334")
 })
